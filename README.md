@@ -1,2 +1,2 @@
 # storage_detection
-scraping and object detection
+Scraping online auction storages for object detection.
