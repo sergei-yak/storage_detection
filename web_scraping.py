@@ -134,3 +134,5 @@ for i, link in enumerate(href_links):
 
 # Close the WebDriver
 driver.quit()
+#how to install bs4
+#pip install beautifulsoup4
