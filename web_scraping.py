@@ -3,136 +3,99 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import re
 import os
 import requests
+import time
 
-
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-dev-shm-usage')
-chrome_options.add_argument('--enable-javascript')
-
+# Setup Chrome Options
+options = webdriver.EdgeOptions()
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--enable-javascript')
 
 # Initialize the WebDriver
+driver = webdriver.Edge(options=options)
 web_loc = 'https://www.storagetreasures.com/auctions/tx/dallas/'
-driver = webdriver.Chrome(options=chrome_options)
 driver.get(web_loc)
-# Inject JavaScript code to navigate to the Dallas, TX page.
-#driver.execute_script('window.location.href = "https://www.storagetreasures.com/auctions/tx/dallas/";')
-
-# If you want to process the page source with BeautifulSoup
-html = driver.page_source
-soup = BeautifulSoup(html, 'html.parser')
-
-# Find all the div elements with the class 'auction-img'
-img_elements = soup.find_all('div', attrs={'class': 'auction-img'})
-# Loop through each div
-url_list = []
-id_url = {}
-# Loop through the div elements and extract the background image URLs
-for div_element in img_elements:
-    # Get the style attribute content
-    style = div_element.get('style')
-
-    # Use regular expression to extract the URL within the url("...") pattern
-    match = re.search(r'url\("([^"]+)"\)', style)
-
-    if match:
-        # Extract and print the background image URL
-        background_image_url = match.group(1)
-        url_list.append(background_image_url)
-        print("Background Image URL:", background_image_url)
-
-    else:
-        print("No background image URL found in style attribute.")
-
+ bncvfb
 
 # Directory where you want to save the images
 save_directory = "auction_images"
-
-# Create the directory if it doesn't exist
 os.makedirs(save_directory, exist_ok=True)
 
-# Loop through the image URLs and download/save each image
-for index, image_url in enumerate(url_list, start=1):
+# Initialize global counters
+auction_counter = 1
+image_counter = 1
+
+# Function to download and save images
+def download_image(image_url, auction_counter, image_counter):
     try:
         response = requests.get(image_url)
         if response.status_code == 200:
-            # Generate a filename for the image
-            filename = os.path.join(save_directory, f"image{index}.jpg")
-
-            # Save the image to the local directory
+            filename = os.path.join(save_directory, f"auction_{auction_counter}_image_{image_counter}.jpg")
             with open(filename, "wb") as file:
                 file.write(response.content)
-            for key, value in id_url.items():
-              if image_url in value:
-                id_url[key].append(filename)
-
-            print(f"Image {index} saved as {filename}")
+            print(f"Image {image_counter} from auction {auction_counter} saved as {filename}")
         else:
-            print(f"Failed to download image {index}: {response.status_code}")
+            print(f"Failed to download image {image_counter} from auction {auction_counter}: {response.status_code}")
     except Exception as e:
-        print(f"Error downloading image {index}: {str(e)}")
+        print(f"Error downloading image {image_counter} from auction {auction_counter}: {str(e)}")
 
-#### click tiles to open each one
-# Find all the auction links
-auction_tiles = driver.find_elements(By.CSS_SELECTOR, ".auction-tiles-special-center a.auction-tile")
-
-# Extract the href attribute from each of the found elements
-href_links = [tile.get_attribute("href") for tile in auction_tiles]
-
-# Loop through each auction link
-#for i in range(len(href_links)):
-for i, link in enumerate(href_links):
-
-    # Click the auction link
-    #href_links[i].click()
+# Function to scrape images from a given auction link
+def scrape_auction_images(link, auction_counter, image_counter):
     driver.get(link)
-
-    # Wait for the auction page to load
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".image-gallery-container")))
-
-    # Process the page source with BeautifulSoup
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
-    # Find all the div elements with the class 'auction-img'
-    img_giants = soup.find_all('img')
-
-    # Loop through each div and extract the background image URLs
-    for idx, img_element in enumerate(img_giants, start=1):
-        # Extract the src attribute
-        giant_image_url = img_element.get('src')
-
-        if giant_image_url:
-            try:
-                response = requests.get(giant_image_url)
-                if response.status_code == 200:
-                    # Generate a filename for the image
-                    filename = os.path.join(save_directory, f"auction_{i + 1}_image_{idx}.jpg")
-
-                    # Save the image to the local directory
-                    with open(filename, "wb") as file:
-                        file.write(response.content)
-
-                    print(f"Image {idx} from auction {i + 1} saved as {filename}")
-                else:
-                    print(f"Failed to download image {idx} from auction {i + 1}: {response.status_code}")
-            except Exception as e:
-                print(f"Error downloading image {idx} from auction {i + 1}: {str(e)}")
+    # Find all image elements in the auction page
+    img_elements = soup.find_all('img')
+    for img_element in img_elements:
+        image_url = img_element.get('src')
+        if image_url:
+            download_image(image_url, auction_counter, image_counter)
+            image_counter += 1
         else:
-            print(f"No src attribute found for image {idx} from auction {i + 1}")
+            print(f"No src attribute found for image {image_counter} from auction {auction_counter}")
+    
+    return image_counter  # Return the updated image counter
 
-    # Go back to the main auction listing page
-    driver.back()
+# Function to scrape auction links from the current page
+def get_auction_links():
+    auction_tiles = driver.find_elements(By.CSS_SELECTOR, ".auction-tiles-special-center a.auction-tile")
+    return [tile.get_attribute("href") for tile in auction_tiles]
 
-    # Wait for the auction listing page to load again
-    WebDriverWait(driver, 10).until(
-        EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".auction-tile.horizontal-tile")))
+# Function to navigate to a specific page
+def navigate_to_page(page_number):
+    try:
+        page_element = driver.find_element(By.ID, f'pagination-page-{page_number}')
+        page_element.click()
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, f'pagination-page-{page_number}')))
+        print(f"Navigated to page {page_number}")
+    except Exception as e:
+        print(f"Error navigating to page {page_number}: {e}")
+
+# Main scraping loop for multiple pages
+current_page = 1
+total_pages = 10  # Adjust based on the number of pages
+
+while current_page <= total_pages:
+    print(f"Scraping data from page {current_page}")
+    auction_links = get_auction_links()  # Get all auction links on the current page
+
+    for link in auction_links:
+        print(f"Processing auction link: {link}")
+        image_counter = scrape_auction_images(link, auction_counter, image_counter)
+        auction_counter += 1  # Increment auction counter after processing each auction
+
+    if current_page < total_pages:
+        current_page += 1
+        navigate_to_page(current_page)  # Navigate to the next page
+        time.sleep(2)  # Wait for the page to load completely
+    else:
+        print("Reached the last page.")
+        break
 
 # Close the WebDriver
 driver.quit()
-#how to install bs4
-#pip install beautifulsoup4
