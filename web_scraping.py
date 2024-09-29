@@ -18,7 +18,6 @@ options.add_argument('--enable-javascript')
 driver = webdriver.Edge(options=options)
 web_loc = 'https://www.storagetreasures.com/auctions/tx/dallas/'
 driver.get(web_loc)
- bncvfb
 
 # Directory where you want to save the images
 save_directory = "auction_images"
