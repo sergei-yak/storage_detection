@@ -27,15 +27,29 @@ os.makedirs(save_directory, exist_ok=True)
 auction_counter = 1
 image_counter = 1
 
-# Function to download and save images
+# Dictionary to store image details: auction number -> list of image dictionaries
+results = {}
+
+# Function to download and save images and add details to the results dictionary
 def download_image(image_url, auction_counter, image_counter):
     try:
         response = requests.get(image_url)
         if response.status_code == 200:
-            filename = os.path.join(save_directory, f"auction_{auction_counter}_image_{image_counter}.jpg")
-            with open(filename, "wb") as file:
+            # Save the image locally
+            filename = f"auction_{auction_counter}_image_{image_counter}.jpg"
+            filepath = os.path.join(save_directory, filename)
+            with open(filepath, "wb") as file:
                 file.write(response.content)
+
             print(f"Image {image_counter} from auction {auction_counter} saved as {filename}")
+
+            # Store the image details in the results dictionary
+            if auction_counter not in results:
+                results[auction_counter] = []  # Initialize a list for this auction if not already present
+            results[auction_counter].append({
+                "image_name": filename,
+                "image_url": image_url
+            })
         else:
             print(f"Failed to download image {image_counter} from auction {auction_counter}: {response.status_code}")
     except Exception as e:
