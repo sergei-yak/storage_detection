@@ -72,6 +72,82 @@ def query_item_image(query):
     # Match the query against both filenames and predicted class names
     for item, data in predicted_items.items():
         # Check if the query matches the prediction filename or class name
+        if query.lower() in [cls.lower() for cls in data['predicted_data'].import os
+import requests
+import json
+import glob
+from PIL import Image
+from langchain import OpenAI, hub
+from openai import OpenAI as openaiconnect
+from langchain.chat_models import ChatOpenAI
+from langchain.agents import initialize_agent, AgentType, AgentExecutor, create_react_agent, create_structured_chat_agent
+from langchain_core.tools import Tool
+from langchain.memory import ConversationBufferMemory
+from langchain_community.agent_toolkits import JsonToolkit, create_json_agent
+from langchain_community.tools.json.tool import JsonSpec
+
+import time
+from requests.exceptions import ConnectTimeout, RequestException
+#from openai.error import APIConnectionError
+
+import os
+from dotenv import load_dotenv #to store keys privately
+
+# Load environment variables from the .env file
+load_dotenv()
+
+# Access the variables
+your_openai_api_key = os.getenv('your_openai_api_key')
+TOKEN = os.getenv('TOKEN')
+chat_id = os.getenv('chat_id')
+
+# Define the path and directories
+MODEL_PATH = "yolov8s-world.pt"
+INPUT_DIR = 'C:/Users/serge/Documents/DBU classes/auction_images'
+OUTPUT_DIR = 'C:/Users/serge/Documents/DBU classes/auction_images/predictions'
+web_loc = 'https://www.storagetreasures.com/auctions/tx/dallas/'
+confidance = 0.5
+
+# Create output directory if it doesn't exist
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# Load YOLO model (assumes a function like YOLOWorld exists for the loaded model)
+def load_model(model_path):
+    """Load the YOLO model from the specified path."""
+    # Placeholder function; replace with actual model loading code
+    pass
+
+def load_predictions(json_file='predicted_items.json'):
+    """Load the predicted items from a JSON file."""
+    if os.path.exists(json_file):
+        with open(json_file, 'r') as f:
+            return json.load(f)
+    return {}
+
+# Answer questions based on the predicted items
+def answer_query_about_items(query):
+    """Answer questions based on the predicted items."""
+    predicted_items = load_predictions()
+    found_items = []
+
+    for item, data in predicted_items.items():
+        if query.lower() in [cls.lower() for cls in data['predicted_data'].keys()] and max(data['predicted_data'][query.lower()])>= confidance:
+            found_items.append(f"Found '{query}' in image '{item}' with prediction saved as '{data['prediction_filename']}'.")
+
+    if found_items:
+        return "\n".join(found_items)
+    else:
+        return f"No '{query}' found in the current images."
+##########################################################################
+# Retrieve image paths for a specific item or filename
+def query_item_image(query):
+    """Return text responses and image paths for a specific item or filename."""
+    predicted_items = load_predictions()
+    response_pairs = []  # To store text and image path pairs
+
+    # Match the query against both filenames and predicted class names
+    for item, data in predicted_items.items():
+        # Check if the query matches the prediction filename or class name
         if query.lower() in [cls.lower() for cls in data['predicted_data'].keys()] and max(data['predicted_data'][query.lower()])>= confidance:
             text_response = f"Found '{query}' in the auction with probability {round(max(data['predicted_data'][query.lower()])*100,2)}%'."
             image_path = os.path.join(OUTPUT_DIR, data['prediction_filename'])
@@ -176,6 +252,25 @@ def langchain_response(json_file, query):
         agent_response = agent_executor.invoke({"input": str(query).lower()})
         return handle_agent_response(agent_response, query)
 
+def langchain_response_alt(json_file, query):
+    if len(query.split()) > 1:
+        # Step 1: Open the file and load the JSON data
+        with open(json_file, 'r') as file:
+            json_data = json.load(file)
+        # Set up the LLM model, we will be using the latest OpenAI model, GPT-4o for the best reasoning and understanding.
+        llm = ChatOpenAI(model="gpt-4o", temperature=0.9, api_key=your_openai_api_key)
+        # Set up the JsonToolkit and JsonSpec for the agent using the latest toolkit: https://python.langchain.com/v0.2/docs/integrations/toolkits/json/
+        json_spec = JsonSpec(dict_=json_data, max_value_length=4000)
+        json_toolkit = JsonToolkit(spec=json_spec)
+        # Create the JSON agent executor and pass the LLM and JsonToolkit
+        json_agent_executor = create_json_agent(
+            llm=llm, toolkit=json_toolkit, verbose=True
+        )
+        #json_agent_executor.run(f"{query}")
+        return send_to_telegram(json_agent_executor.run(f"{query}"), [])
+    else:
+        agent_response = agent_executor.invoke({"input": str(query).lower()})
+        return handle_agent_response(agent_response, query)
 
 
 # LangChain tools setup
