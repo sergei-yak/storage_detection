@@ -4,6 +4,7 @@ import json
 import glob
 from PIL import Image
 from langchain import OpenAI, hub
+from openai import OpenAI as openaiconnect
 from langchain.chat_models import ChatOpenAI
 from langchain.agents import initialize_agent, AgentType, AgentExecutor, create_react_agent, create_structured_chat_agent
 from langchain_core.tools import Tool
@@ -150,6 +151,33 @@ def handle_agent_response(agent_response, query):
     if not response_pairs:
         send_to_telegram(agent_response[1], [])  # Send the agent's response as a message if no images found
 
+def langchain_response(json_file, query):
+    if len(query.split()) > 1:
+        # Step 1: Open the file and load the JSON data
+        with open(json_file, 'r') as file:
+            json_data = json.load(file)
+
+        # Step 2: Convert the JSON object to a string
+        json_string = json.dumps(json_data, indent=4)
+
+        client = openaiconnect(api_key=your_openai_api_key)
+
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "assistant",
+                    "content": f"{query}, use this data to answer - {json_string}",
+                }
+            ],
+            model="gpt-3.5-turbo",
+        )
+        return send_to_telegram(chat_completion.choices[0].message.content, [])
+    else:
+        agent_response = agent_executor.invoke({"input": str(query).lower()})
+        return handle_agent_response(agent_response, query)
+
+
+
 # LangChain tools setup
 tools = [
     #Tool(
@@ -222,8 +250,9 @@ while True:
     try:
         message_text, message_id = balance_command()
         if message_id != last_message_id:
-            agent_response = agent_executor.invoke({"input": str(message_text).lower()})
-            handle_agent_response(agent_response['output'], str(message_text).lower())
+            #agent_response = agent_executor.invoke({"input": str(message_text).lower()})
+            #handle_agent_response(agent_response['output'], str(message_text).lower())
+            langchain_response("predicted_items.json", message_text) #if meassage_text is more than one word, it will use OpenAI API, else it will use agent_executor
 
             # send this message when finished object detection
             msg = f"I've finished checking storage units for {str(message_text).upper()}. \nIf you want to look for another specific item in the storage units, just send the name of the item to this channel."
