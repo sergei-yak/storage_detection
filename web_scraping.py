@@ -6,10 +6,11 @@ from selenium.webdriver.support import expected_conditions as EC
 import os
 import requests
 import time
-import json  # Import json module
+import json
 
 # Setup Edge WebDriver options
-options = webdriver.EdgeOptions()
+options = webdriver.ChromeOptions() # for mac - chrome browser
+#options = webdriver.EdgeOptions()
 options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')

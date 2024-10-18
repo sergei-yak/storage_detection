@@ -1,2 +1,5 @@
 # ignore the .env file
 .env
+
+# ignore folder with downloaded storage unit images
+auction_images/
