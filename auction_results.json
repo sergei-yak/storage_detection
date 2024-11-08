@@ -1,0 +1,922 @@
+{
+    "1": [
+        {
+            "image_name": "auction_1_image_2.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/1/5/7/giant.jpg",
+            "auction_id": "4542718"
+        },
+        {
+            "image_name": "auction_1_image_3.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/1/5/8/giant.jpg",
+            "auction_id": "4542718"
+        },
+        {
+            "image_name": "auction_1_image_4.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/1/5/9/giant.jpg",
+            "auction_id": "4542718"
+        },
+        {
+            "image_name": "auction_1_image_5.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/1/6/0/giant.jpg",
+            "auction_id": "4542718"
+        },
+        {
+            "image_name": "auction_1_image_6.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/1/6/1/giant.jpg",
+            "auction_id": "4542718"
+        },
+        {
+            "image_name": "auction_1_image_7.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/1/6/3/giant.jpg",
+            "auction_id": "4542718"
+        },
+        {
+            "image_name": "auction_1_image_8.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/1/6/5/giant.jpg",
+            "auction_id": "4542718"
+        },
+        {
+            "image_name": "auction_1_image_21.jpg",
+            "image_url": "https://cdn.cookielaw.org/logos/20096c21-0391-4dbd-b68b-cbe80924d72d/f6e66e63-8d54-41c0-b4e5-9f0e3b617405/a30f57a6-f67b-4b2a-91da-24abb68e1d9b/StorageTreasures_Logo_1.png",
+            "auction_id": "4542718"
+        },
+        {
+            "image_name": "auction_1_image_22.jpg",
+            "image_url": "https://cdn.cookielaw.org/logos/static/powered_by_logo.svg",
+            "auction_id": "4542718"
+        },
+        {
+            "image_name": "auction_1_image_23.jpg",
+            "image_url": "https://insomniaconline.opentechalliance.com:9443/images/Live Chat/Chat_Desktop_STv3.png",
+            "auction_id": "4542718"
+        }
+    ],
+    "2": [
+        {
+            "image_name": "auction_2_image_25.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/1/0/1/5/6/giant.jpg",
+            "auction_id": "4535145"
+        },
+        {
+            "image_name": "auction_2_image_26.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/1/0/1/5/7/giant.jpg",
+            "auction_id": "4535145"
+        },
+        {
+            "image_name": "auction_2_image_27.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/1/0/1/5/8/giant.jpg",
+            "auction_id": "4535145"
+        }
+    ],
+    "3": [
+        {
+            "image_name": "auction_3_image_40.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/9/9/0/1/giant.jpg",
+            "auction_id": "4518357"
+        },
+        {
+            "image_name": "auction_3_image_41.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/9/9/0/2/giant.jpg",
+            "auction_id": "4518357"
+        },
+        {
+            "image_name": "auction_3_image_42.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/9/9/0/3/giant.jpg",
+            "auction_id": "4518357"
+        },
+        {
+            "image_name": "auction_3_image_43.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/9/9/0/4/giant.jpg",
+            "auction_id": "4518357"
+        },
+        {
+            "image_name": "auction_3_image_44.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/9/9/0/5/giant.jpg",
+            "auction_id": "4518357"
+        },
+        {
+            "image_name": "auction_3_image_45.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/9/9/0/6/giant.jpg",
+            "auction_id": "4518357"
+        },
+        {
+            "image_name": "auction_3_image_46.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/9/9/0/7/giant.jpg",
+            "auction_id": "4518357"
+        },
+        {
+            "image_name": "auction_3_image_47.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/9/9/0/8/giant.jpg",
+            "auction_id": "4518357"
+        },
+        {
+            "image_name": "auction_3_image_48.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/9/9/0/9/giant.jpg",
+            "auction_id": "4518357"
+        }
+    ],
+    "4": [
+        {
+            "image_name": "auction_4_image_67.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/0/8/0/8/giant.jpg",
+            "auction_id": "4518498"
+        },
+        {
+            "image_name": "auction_4_image_68.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/0/8/1/0/giant.jpg",
+            "auction_id": "4518498"
+        },
+        {
+            "image_name": "auction_4_image_69.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/0/8/1/2/giant.jpg",
+            "auction_id": "4518498"
+        },
+        {
+            "image_name": "auction_4_image_70.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/0/8/1/4/giant.jpg",
+            "auction_id": "4518498"
+        },
+        {
+            "image_name": "auction_4_image_71.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/0/8/1/6/giant.jpg",
+            "auction_id": "4518498"
+        },
+        {
+            "image_name": "auction_4_image_72.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/0/8/1/8/giant.jpg",
+            "auction_id": "4518498"
+        },
+        {
+            "image_name": "auction_4_image_73.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/0/8/1/9/giant.jpg",
+            "auction_id": "4518498"
+        },
+        {
+            "image_name": "auction_4_image_74.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/0/8/2/1/giant.jpg",
+            "auction_id": "4518498"
+        },
+        {
+            "image_name": "auction_4_image_75.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/0/8/2/2/giant.jpg",
+            "auction_id": "4518498"
+        },
+        {
+            "image_name": "auction_4_image_76.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/0/8/2/3/giant.jpg",
+            "auction_id": "4518498"
+        }
+    ],
+    "5": [
+        {
+            "image_name": "auction_5_image_96.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/5/5/0/3/giant.jpg",
+            "auction_id": "4519195"
+        },
+        {
+            "image_name": "auction_5_image_97.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/5/5/0/7/giant.jpg",
+            "auction_id": "4519195"
+        },
+        {
+            "image_name": "auction_5_image_98.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/5/5/1/0/giant.jpg",
+            "auction_id": "4519195"
+        },
+        {
+            "image_name": "auction_5_image_99.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/5/5/1/3/giant.jpg",
+            "auction_id": "4519195"
+        },
+        {
+            "image_name": "auction_5_image_100.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/5/5/1/5/giant.jpg",
+            "auction_id": "4519195"
+        },
+        {
+            "image_name": "auction_5_image_101.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/5/5/1/8/giant.jpg",
+            "auction_id": "4519195"
+        },
+        {
+            "image_name": "auction_5_image_102.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/5/5/2/1/giant.jpg",
+            "auction_id": "4519195"
+        },
+        {
+            "image_name": "auction_5_image_103.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/5/5/2/4/giant.jpg",
+            "auction_id": "4519195"
+        },
+        {
+            "image_name": "auction_5_image_104.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/5/5/2/6/giant.jpg",
+            "auction_id": "4519195"
+        }
+    ],
+    "6": [
+        {
+            "image_name": "auction_6_image_123.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/6/2/9/3/giant.jpg",
+            "auction_id": "4519280"
+        },
+        {
+            "image_name": "auction_6_image_124.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/6/2/9/5/giant.jpg",
+            "auction_id": "4519280"
+        },
+        {
+            "image_name": "auction_6_image_125.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/6/2/9/7/giant.jpg",
+            "auction_id": "4519280"
+        },
+        {
+            "image_name": "auction_6_image_126.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/6/2/9/8/giant.jpg",
+            "auction_id": "4519280"
+        },
+        {
+            "image_name": "auction_6_image_127.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/6/2/9/9/giant.jpg",
+            "auction_id": "4519280"
+        },
+        {
+            "image_name": "auction_6_image_128.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/6/3/0/0/giant.jpg",
+            "auction_id": "4519280"
+        },
+        {
+            "image_name": "auction_6_image_129.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/6/3/0/1/giant.jpg",
+            "auction_id": "4519280"
+        },
+        {
+            "image_name": "auction_6_image_130.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/6/3/0/2/giant.jpg",
+            "auction_id": "4519280"
+        }
+    ],
+    "7": [
+        {
+            "image_name": "auction_7_image_148.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/7/5/9/4/giant.jpg",
+            "auction_id": "4519459"
+        },
+        {
+            "image_name": "auction_7_image_149.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/7/5/9/5/giant.jpg",
+            "auction_id": "4519459"
+        },
+        {
+            "image_name": "auction_7_image_150.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/7/5/9/6/giant.jpg",
+            "auction_id": "4519459"
+        },
+        {
+            "image_name": "auction_7_image_151.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/7/5/9/7/giant.jpg",
+            "auction_id": "4519459"
+        },
+        {
+            "image_name": "auction_7_image_152.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/7/5/9/8/giant.jpg",
+            "auction_id": "4519459"
+        },
+        {
+            "image_name": "auction_7_image_153.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/7/5/9/9/giant.jpg",
+            "auction_id": "4519459"
+        },
+        {
+            "image_name": "auction_7_image_154.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/9/7/6/0/0/giant.jpg",
+            "auction_id": "4519459"
+        }
+    ],
+    "8": [
+        {
+            "image_name": "auction_8_image_171.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/6/0/6/giant.jpg",
+            "auction_id": "4516831"
+        },
+        {
+            "image_name": "auction_8_image_172.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/6/0/7/giant.jpg",
+            "auction_id": "4516831"
+        },
+        {
+            "image_name": "auction_8_image_173.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/6/0/8/giant.jpg",
+            "auction_id": "4516831"
+        },
+        {
+            "image_name": "auction_8_image_174.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/6/0/9/giant.jpg",
+            "auction_id": "4516831"
+        },
+        {
+            "image_name": "auction_8_image_175.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/6/1/0/giant.jpg",
+            "auction_id": "4516831"
+        }
+    ],
+    "9": [
+        {
+            "image_name": "auction_9_image_190.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/7/2/8/giant.jpg",
+            "auction_id": "4516850"
+        },
+        {
+            "image_name": "auction_9_image_191.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/7/2/9/giant.jpg",
+            "auction_id": "4516850"
+        },
+        {
+            "image_name": "auction_9_image_192.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/7/3/0/giant.jpg",
+            "auction_id": "4516850"
+        },
+        {
+            "image_name": "auction_9_image_193.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/7/3/1/giant.jpg",
+            "auction_id": "4516850"
+        },
+        {
+            "image_name": "auction_9_image_194.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/7/3/2/giant.jpg",
+            "auction_id": "4516850"
+        }
+    ],
+    "10": [
+        {
+            "image_name": "auction_10_image_209.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/8/7/7/giant.jpg",
+            "auction_id": "4516875"
+        },
+        {
+            "image_name": "auction_10_image_210.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/8/7/8/giant.jpg",
+            "auction_id": "4516875"
+        },
+        {
+            "image_name": "auction_10_image_211.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/8/7/9/giant.jpg",
+            "auction_id": "4516875"
+        },
+        {
+            "image_name": "auction_10_image_212.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/8/8/1/giant.jpg",
+            "auction_id": "4516875"
+        },
+        {
+            "image_name": "auction_10_image_213.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/7/9/8/8/3/giant.jpg",
+            "auction_id": "4516875"
+        }
+    ],
+    "11": [
+        {
+            "image_name": "auction_11_image_228.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/0/0/2/giant.jpg",
+            "auction_id": "4516895"
+        },
+        {
+            "image_name": "auction_11_image_229.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/0/0/3/giant.jpg",
+            "auction_id": "4516895"
+        },
+        {
+            "image_name": "auction_11_image_230.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/0/0/4/giant.jpg",
+            "auction_id": "4516895"
+        },
+        {
+            "image_name": "auction_11_image_231.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/0/0/5/giant.jpg",
+            "auction_id": "4516895"
+        }
+    ],
+    "12": [
+        {
+            "image_name": "auction_12_image_245.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/4/0/9/giant.jpg",
+            "auction_id": "4516959"
+        },
+        {
+            "image_name": "auction_12_image_246.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/4/1/0/giant.jpg",
+            "auction_id": "4516959"
+        },
+        {
+            "image_name": "auction_12_image_247.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/4/1/1/giant.jpg",
+            "auction_id": "4516959"
+        }
+    ],
+    "13": [
+        {
+            "image_name": "auction_13_image_260.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/5/0/1/giant.jpg",
+            "auction_id": "4516971"
+        },
+        {
+            "image_name": "auction_13_image_261.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/5/0/2/giant.jpg",
+            "auction_id": "4516971"
+        },
+        {
+            "image_name": "auction_13_image_262.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/5/0/3/giant.jpg",
+            "auction_id": "4516971"
+        },
+        {
+            "image_name": "auction_13_image_263.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/5/0/4/giant.jpg",
+            "auction_id": "4516971"
+        }
+    ],
+    "14": [
+        {
+            "image_name": "auction_14_image_277.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/5/8/2/giant.jpg",
+            "auction_id": "4516985"
+        },
+        {
+            "image_name": "auction_14_image_278.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/5/8/3/giant.jpg",
+            "auction_id": "4516985"
+        },
+        {
+            "image_name": "auction_14_image_279.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/5/8/4/giant.jpg",
+            "auction_id": "4516985"
+        },
+        {
+            "image_name": "auction_14_image_280.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/5/8/5/giant.jpg",
+            "auction_id": "4516985"
+        }
+    ],
+    "15": [
+        {
+            "image_name": "auction_15_image_294.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/6/9/1/giant.jpg",
+            "auction_id": "4516999"
+        },
+        {
+            "image_name": "auction_15_image_295.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/6/9/2/giant.jpg",
+            "auction_id": "4516999"
+        },
+        {
+            "image_name": "auction_15_image_296.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/6/9/3/giant.jpg",
+            "auction_id": "4516999"
+        },
+        {
+            "image_name": "auction_15_image_297.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/6/9/4/giant.jpg",
+            "auction_id": "4516999"
+        },
+        {
+            "image_name": "auction_15_image_298.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/8/0/6/9/5/giant.jpg",
+            "auction_id": "4516999"
+        }
+    ],
+    "16": [
+        {
+            "image_name": "auction_16_image_313.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/1/5/8/6/giant.jpg",
+            "auction_id": "4542637"
+        },
+        {
+            "image_name": "auction_16_image_314.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/1/5/8/7/giant.jpg",
+            "auction_id": "4542637"
+        },
+        {
+            "image_name": "auction_16_image_315.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/1/5/8/8/giant.jpg",
+            "auction_id": "4542637"
+        },
+        {
+            "image_name": "auction_16_image_316.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/1/5/8/9/giant.jpg",
+            "auction_id": "4542637"
+        },
+        {
+            "image_name": "auction_16_image_317.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/1/5/9/0/giant.jpg",
+            "auction_id": "4542637"
+        }
+    ],
+    "17": [
+        {
+            "image_name": "auction_17_image_332.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/1/2/8/4/giant.jpg",
+            "auction_id": "4542596"
+        },
+        {
+            "image_name": "auction_17_image_333.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/1/2/8/5/giant.jpg",
+            "auction_id": "4542596"
+        },
+        {
+            "image_name": "auction_17_image_334.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/1/2/8/7/giant.jpg",
+            "auction_id": "4542596"
+        },
+        {
+            "image_name": "auction_17_image_335.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/1/2/8/8/giant.jpg",
+            "auction_id": "4542596"
+        },
+        {
+            "image_name": "auction_17_image_336.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/1/2/9/1/giant.jpg",
+            "auction_id": "4542596"
+        }
+    ],
+    "18": [
+        {
+            "image_name": "auction_18_image_351.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/0/4/1/giant.jpg",
+            "auction_id": "4542700"
+        },
+        {
+            "image_name": "auction_18_image_352.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/0/4/2/giant.jpg",
+            "auction_id": "4542700"
+        },
+        {
+            "image_name": "auction_18_image_353.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/0/4/3/giant.jpg",
+            "auction_id": "4542700"
+        },
+        {
+            "image_name": "auction_18_image_354.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/2/0/4/4/giant.jpg",
+            "auction_id": "4542700"
+        }
+    ],
+    "19": [
+        {
+            "image_name": "auction_19_image_368.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/2/6/3/giant.jpg",
+            "auction_id": "4543143"
+        },
+        {
+            "image_name": "auction_19_image_369.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/2/6/4/giant.jpg",
+            "auction_id": "4543143"
+        },
+        {
+            "image_name": "auction_19_image_370.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/2/7/0/giant.jpg",
+            "auction_id": "4543143"
+        },
+        {
+            "image_name": "auction_19_image_371.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/2/7/6/giant.jpg",
+            "auction_id": "4543143"
+        },
+        {
+            "image_name": "auction_19_image_372.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/2/7/7/giant.jpg",
+            "auction_id": "4543143"
+        }
+    ],
+    "20": [
+        {
+            "image_name": "auction_20_image_387.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/4/0/3/7/giant.jpg",
+            "auction_id": "4542967"
+        },
+        {
+            "image_name": "auction_20_image_388.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/4/0/3/9/giant.jpg",
+            "auction_id": "4542967"
+        },
+        {
+            "image_name": "auction_20_image_389.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/4/0/4/0/giant.jpg",
+            "auction_id": "4542967"
+        },
+        {
+            "image_name": "auction_20_image_390.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/4/0/4/1/giant.jpg",
+            "auction_id": "4542967"
+        },
+        {
+            "image_name": "auction_20_image_391.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/4/0/4/2/giant.jpg",
+            "auction_id": "4542967"
+        }
+    ],
+    "21": [
+        {
+            "image_name": "auction_21_image_406.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/0/1/7/giant.jpg",
+            "auction_id": "4543106"
+        },
+        {
+            "image_name": "auction_21_image_407.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/0/1/9/giant.jpg",
+            "auction_id": "4543106"
+        },
+        {
+            "image_name": "auction_21_image_408.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/0/2/1/giant.jpg",
+            "auction_id": "4543106"
+        },
+        {
+            "image_name": "auction_21_image_409.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/0/2/3/giant.jpg",
+            "auction_id": "4543106"
+        },
+        {
+            "image_name": "auction_21_image_410.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/0/2/5/giant.jpg",
+            "auction_id": "4543106"
+        },
+        {
+            "image_name": "auction_21_image_411.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/0/2/7/giant.jpg",
+            "auction_id": "4543106"
+        }
+    ],
+    "22": [
+        {
+            "image_name": "auction_22_image_427.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/3/3/1/giant.jpg",
+            "auction_id": "4543157"
+        },
+        {
+            "image_name": "auction_22_image_428.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/3/3/3/giant.jpg",
+            "auction_id": "4543157"
+        },
+        {
+            "image_name": "auction_22_image_429.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/3/3/5/giant.jpg",
+            "auction_id": "4543157"
+        },
+        {
+            "image_name": "auction_22_image_430.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/3/3/7/giant.jpg",
+            "auction_id": "4543157"
+        },
+        {
+            "image_name": "auction_22_image_431.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/3/3/9/giant.jpg",
+            "auction_id": "4543157"
+        }
+    ],
+    "23": [
+        {
+            "image_name": "auction_23_image_446.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/4/6/5/giant.jpg",
+            "auction_id": "4543174"
+        },
+        {
+            "image_name": "auction_23_image_447.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/4/6/6/giant.jpg",
+            "auction_id": "4543174"
+        },
+        {
+            "image_name": "auction_23_image_448.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/4/6/7/giant.jpg",
+            "auction_id": "4543174"
+        },
+        {
+            "image_name": "auction_23_image_449.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/4/6/8/giant.jpg",
+            "auction_id": "4543174"
+        },
+        {
+            "image_name": "auction_23_image_450.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/4/6/9/giant.jpg",
+            "auction_id": "4543174"
+        }
+    ],
+    "24": [
+        {
+            "image_name": "auction_24_image_465.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/5/5/6/giant.jpg",
+            "auction_id": "4543188"
+        },
+        {
+            "image_name": "auction_24_image_466.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/5/5/7/giant.jpg",
+            "auction_id": "4543188"
+        },
+        {
+            "image_name": "auction_24_image_467.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/5/5/8/giant.jpg",
+            "auction_id": "4543188"
+        },
+        {
+            "image_name": "auction_24_image_468.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/5/5/9/giant.jpg",
+            "auction_id": "4543188"
+        },
+        {
+            "image_name": "auction_24_image_469.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/5/6/0/giant.jpg",
+            "auction_id": "4543188"
+        },
+        {
+            "image_name": "auction_24_image_470.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/5/5/6/1/giant.jpg",
+            "auction_id": "4543188"
+        }
+    ],
+    "25": [
+        {
+            "image_name": "auction_25_image_486.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/0/4/1/giant.jpg",
+            "auction_id": "4543261"
+        },
+        {
+            "image_name": "auction_25_image_487.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/0/4/2/giant.jpg",
+            "auction_id": "4543261"
+        },
+        {
+            "image_name": "auction_25_image_488.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/0/4/3/giant.jpg",
+            "auction_id": "4543261"
+        },
+        {
+            "image_name": "auction_25_image_489.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/0/4/4/giant.jpg",
+            "auction_id": "4543261"
+        },
+        {
+            "image_name": "auction_25_image_490.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/0/4/5/giant.jpg",
+            "auction_id": "4543261"
+        }
+    ],
+    "26": [
+        {
+            "image_name": "auction_26_image_505.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/1/9/0/giant.jpg",
+            "auction_id": "4543285"
+        },
+        {
+            "image_name": "auction_26_image_506.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/1/9/1/giant.jpg",
+            "auction_id": "4543285"
+        },
+        {
+            "image_name": "auction_26_image_507.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/1/9/2/giant.jpg",
+            "auction_id": "4543285"
+        },
+        {
+            "image_name": "auction_26_image_508.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/2/0/0/giant.jpg",
+            "auction_id": "4543285"
+        },
+        {
+            "image_name": "auction_26_image_509.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/2/0/1/giant.jpg",
+            "auction_id": "4543285"
+        },
+        {
+            "image_name": "auction_26_image_510.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/2/0/2/giant.jpg",
+            "auction_id": "4543285"
+        },
+        {
+            "image_name": "auction_26_image_511.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/6/6/2/0/3/giant.jpg",
+            "auction_id": "4543285"
+        }
+    ],
+    "27": [
+        {
+            "image_name": "auction_27_image_528.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/0/1/2/8/3/giant.jpg",
+            "auction_id": "4505834"
+        },
+        {
+            "image_name": "auction_27_image_529.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/4/0/1/2/8/4/giant.jpg",
+            "auction_id": "4505834"
+        }
+    ],
+    "28": [
+        {
+            "image_name": "auction_28_image_541.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/1/3/8/0/giant.jpg",
+            "auction_id": "4538397"
+        },
+        {
+            "image_name": "auction_28_image_542.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/1/3/8/1/giant.jpg",
+            "auction_id": "4538397"
+        },
+        {
+            "image_name": "auction_28_image_543.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/1/3/8/4/giant.jpg",
+            "auction_id": "4538397"
+        },
+        {
+            "image_name": "auction_28_image_544.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/1/3/8/6/giant.jpg",
+            "auction_id": "4538397"
+        },
+        {
+            "image_name": "auction_28_image_545.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/1/3/8/7/giant.jpg",
+            "auction_id": "4538397"
+        },
+        {
+            "image_name": "auction_28_image_546.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/1/3/8/9/giant.jpg",
+            "auction_id": "4538397"
+        },
+        {
+            "image_name": "auction_28_image_547.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/1/3/9/1/giant.jpg",
+            "auction_id": "4538397"
+        }
+    ],
+    "29": [
+        {
+            "image_name": "auction_29_image_564.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/6/5/4/3/giant.jpg",
+            "auction_id": "4539153"
+        },
+        {
+            "image_name": "auction_29_image_565.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/6/5/4/4/giant.jpg",
+            "auction_id": "4539153"
+        },
+        {
+            "image_name": "auction_29_image_566.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/6/5/4/5/giant.jpg",
+            "auction_id": "4539153"
+        },
+        {
+            "image_name": "auction_29_image_567.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/6/5/4/6/giant.jpg",
+            "auction_id": "4539153"
+        },
+        {
+            "image_name": "auction_29_image_568.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/6/5/4/7/giant.jpg",
+            "auction_id": "4539153"
+        },
+        {
+            "image_name": "auction_29_image_569.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/6/5/4/8/giant.jpg",
+            "auction_id": "4539153"
+        },
+        {
+            "image_name": "auction_29_image_570.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/6/5/4/9/giant.jpg",
+            "auction_id": "4539153"
+        }
+    ],
+    "30": [
+        {
+            "image_name": "auction_30_image_587.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/8/2/6/2/giant.jpg",
+            "auction_id": "4539418"
+        },
+        {
+            "image_name": "auction_30_image_588.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/8/2/6/3/giant.jpg",
+            "auction_id": "4539418"
+        },
+        {
+            "image_name": "auction_30_image_589.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/8/2/6/4/giant.jpg",
+            "auction_id": "4539418"
+        },
+        {
+            "image_name": "auction_30_image_590.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/8/2/6/5/giant.jpg",
+            "auction_id": "4539418"
+        },
+        {
+            "image_name": "auction_30_image_591.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/8/2/6/6/giant.jpg",
+            "auction_id": "4539418"
+        },
+        {
+            "image_name": "auction_30_image_592.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/8/2/6/7/giant.jpg",
+            "auction_id": "4539418"
+        },
+        {
+            "image_name": "auction_30_image_593.jpg",
+            "image_url": "https://media.st-prd-1.aws.storagetreasures.com/data/auctions/images/2/9/6/3/8/2/6/8/giant.jpg",
+            "auction_id": "4539418"
+        }
+    ]
+}
