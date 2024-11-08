@@ -6,14 +6,22 @@ import json
 
 # Define the YOLO model path and directories
 MODEL_PATH = "yolov8s-world.pt"
-INPUT_DIR = 'C:/Users/serge/Documents/DBU classes/auction_images'
-OUTPUT_DIR = 'C:/Users/serge/Documents/DBU classes/auction_images/predictions'
+INPUT_DIR = 'auction_images'
+OUTPUT_DIR = 'auction_images/predictions'
 
 # Create output directory if it doesn't exist
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Global variable to store predictions
 predicted_items = {}
+
+def load_json(json_file):
+    if os.path.exists(json_file):
+        with open(json_file, 'r') as f:
+            return json.load(f)
+    return {}
+
+auction_results = load_json('auction_results.json')
 
 def load_model(model_path):
     """Load the YOLO model from the specified path."""
@@ -38,7 +46,7 @@ def is_valid_image(image_path):
 def predict_and_save(model, image_path, output_dir):
     """Run prediction on an image and save the output to the specified directory."""
     if not is_valid_image(image_path):
-        print(f"WARNING ⚠️ Skipping invalid image: {image_path}")
+        print(f"WARNING! Skipping invalid image: {image_path}")
         return None, None, None
 
     prediction_results = model.predict(image_path)
@@ -68,15 +76,28 @@ def process_images(model, input_dir, output_dir):
     """Iterate through all images in the input directory and store results."""
     image_files = get_image_files(input_dir)
     global predicted_items
+
+    # we need this to add the auction_id to predicted_items
+    auction_lookup = {
+        item['image_name']: item['auction_id']
+        for images in auction_results.values()
+        for item in images
+    }
+
     for image_file in image_files:
         original_filename, prediction_filename, results = predict_and_save(model, image_file, output_dir)
         if original_filename is None:
             continue
         prediction_data = parse_predictions(results, model)
+
+        # matches auction_id to original_filename
+        auction_id = auction_lookup.get(original_filename)
+
         predicted_items[original_filename] = {
-            "original_filename": original_filename,
+            #"original_filename": original_filename, # deleted, because it is a duplicate and OpenAI limit
             "prediction_filename": prediction_filename,
-            "predicted_data": prediction_data
+            "predicted_data": prediction_data,
+            "auction_id": auction_id
         }
 
 def main():
@@ -86,7 +107,7 @@ def main():
 
     # Output the final dictionary with all detected objects
     for item, data in predicted_items.items():
-        print(f"Original File: {data['original_filename']}, Predicted File: {data['prediction_filename']}")
+        print(f"Original File: {item}, Predicted File: {data['prediction_filename']}") # replaced {data['original_filename']} with item
         print("Detected Objects:")
         for class_name, confidences in data['predicted_data'].items():
             avg_confidence = sum(confidences) / len(confidences)
