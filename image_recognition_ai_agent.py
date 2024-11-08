@@ -29,19 +29,14 @@ chat_id = os.getenv('chat_id')
 
 # Define the path and directories
 MODEL_PATH = "yolov8s-world.pt"
-INPUT_DIR = 'C:/Users/serge/Documents/DBU classes/auction_images'
-OUTPUT_DIR = 'C:/Users/serge/Documents/DBU classes/auction_images/predictions'
+INPUT_DIR = 'auction_images'
+OUTPUT_DIR = 'auction_images/predictions'
 web_loc = 'https://www.storagetreasures.com/auctions/tx/dallas/'
 confidance = 0.5
 
 # Create output directory if it doesn't exist
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Load YOLO model (assumes a function like YOLOWorld exists for the loaded model)
-def load_model(model_path):
-    """Load the YOLO model from the specified path."""
-    # Placeholder function; replace with actual model loading code
-    pass
 
 def load_predictions(json_file='predicted_items.json'):
     """Load the predicted items from a JSON file."""
@@ -50,20 +45,6 @@ def load_predictions(json_file='predicted_items.json'):
             return json.load(f)
     return {}
 
-# Answer questions based on the predicted items
-def answer_query_about_items(query):
-    """Answer questions based on the predicted items."""
-    predicted_items = load_predictions()
-    found_items = []
-
-    for item, data in predicted_items.items():
-        if query.lower() in [cls.lower() for cls in data['predicted_data'].keys()] and max(data['predicted_data'][query.lower()])>= confidance:
-            found_items.append(f"Found '{query}' in image '{item}' with prediction saved as '{data['prediction_filename']}'.")
-
-    if found_items:
-        return "\n".join(found_items)
-    else:
-        return f"No '{query}' found in the current images."
 ##########################################################################
 # Retrieve image paths for a specific item or filename
 def query_item_image(query):
@@ -75,10 +56,10 @@ def query_item_image(query):
     for item, data in predicted_items.items():
         # Check if the query matches the prediction filename or class name
         if query.lower() in [cls.lower() for cls in data['predicted_data'].keys()] and max(data['predicted_data'][query.lower()])>= confidance:
-            text_response = f"Found '{query}' in the auction with probability {round(max(data['predicted_data'][query.lower()])*100,2)}%'."
+            text_response = f"Found '{query}' in the auction with probability {round(max(data['predicted_data'][query.lower()])*100,2)}%. \nLink: {'https://www.storagetreasures.com/auctions/tx/dallas/'+data['auction_id']}"
             image_path = os.path.join(OUTPUT_DIR, data['prediction_filename'])
             
-            # Normalize and replace '\\' with '/' to avoid formatting issues
+            # Normalize path, replaced '\\' with '/' to avoid formatting issues
             normalized_path = os.path.normpath(image_path).replace('\\', '/')
             
             # If the image path exists, add the response pair
@@ -91,7 +72,7 @@ def query_item_image(query):
     else:
         return [(f"No '{query}' found in the current images.", None)]
     
-# Send text and images to Telegram one by one
+# Send text and images to Telegram one by one -- we dont need it anymore???
 def send_text_and_image_to_telegram(query):
     """Send text responses and associated images to the Telegram chat."""
     response_pairs = query_item_image(query)
@@ -178,7 +159,7 @@ def langchain_response(json_file, query):
         agent_response = agent_executor.invoke({"input": str(query).lower()})
         return handle_agent_response(agent_response, query)
 
-def langchain_response_alt(json_file, query):
+def langchain_response_alt(json_file, query): ### dont need it anymore
     if len(query.split()) > 1:
         # Step 1: Open the file and load the JSON data
         with open(json_file, 'r') as file:
@@ -229,9 +210,7 @@ agent_executor = AgentExecutor.from_agent_and_tools(
     verbose=True
 )
 
-# Example usage: Send agent response and images to Telegram
-user_query = "bicyles"
-agent_response = agent_executor.invoke({"input": user_query})
+
 ###<--
 
 # send this message at the begining
@@ -240,11 +219,13 @@ url_tel = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&te
 requests.get(url_tel).json()
 
 
+# Example usage - for testing purposes
+#user_query = "bicyles"
+#agent_response = agent_executor.invoke({"input": user_query})
 #response = agent.run(user_query)
-print(agent_response['output'])
-
+#print(agent_response['output'])
 # Handle the agent's response to send formatted text and images to Telegram
-handle_agent_response(agent_response['output'], user_query)
+#handle_agent_response(agent_response['output'], user_query)
 
 def balance_command():
     url = f"https://api.telegram.org/bot{TOKEN}/getUpdates?offset=-1"
@@ -271,9 +252,10 @@ while True:
             langchain_response("predicted_items.json", message_text) #if meassage_text is more than one word, it will use OpenAI API, else it will use agent_executor
 
             # send this message when finished object detection
-            msg = f"I've finished checking storage units for {str(message_text).upper()}. \nIf you want to look for another specific item in the storage units, just send the name of the item to this channel."
-            url_tel = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={msg}"
-            requests.get(url_tel).json()
+            if len(message_text) <= 1:
+                msg = f"I've finished checking storage units for {str(message_text).upper()}. \nIf you want to look for another specific item in the storage units, just send the name of the item to this channel."
+                url_tel = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={msg}"
+                requests.get(url_tel).json()
             last_message_id = message_id
 
     # Handle OpenAI API connection errors
