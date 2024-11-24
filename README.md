@@ -1,5 +1,7 @@
 # storage_detection
 Project to find objects in online auctions images and use chat to get information about specific items:
+<img width="868" alt="image" src="https://github.com/user-attachments/assets/e43088a8-0cff-4474-97a2-03b32aeecdd5">
+
 
 # 1. Web scraping:
     # Download images and save image urls, ids into json
