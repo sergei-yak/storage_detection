@@ -13,6 +13,7 @@ Project to find objects in online auctions images and use chat to get informatio
 
 # 3. Langchain and Telegram API:
     # Run ai agent with a tool (for future development) and run telegram bot
+<img width="1655" alt="image" src="https://github.com/user-attachments/assets/afecc561-f905-437d-bea2-2ad310952eea">
+<img width="1235" alt="image" src="https://github.com/user-attachments/assets/dae1af38-57a1-455e-9b3a-f0ab5f4da4f7">
 
-<img width="968" alt="image" src="https://github.com/user-attachments/assets/15c0ea2f-e7da-4f25-a239-43760fcc0689">
 
