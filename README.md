@@ -6,7 +6,6 @@ Project to find objects in online auctions images and use chat to get informatio
 # 1. Web scraping:
     # Download images and save image urls, ids into json
 
-<img width="703" alt="image (2)" src="https://github.com/user-attachments/assets/3881921b-e788-450e-a228-a94204d82005">
 
 # 2. Neural network model:
     # Run object recognition on images and save recognazed objects with json data
