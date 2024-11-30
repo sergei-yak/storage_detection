@@ -9,12 +9,17 @@ import time
 import json
 
 # Setup Edge WebDriver options
-options = webdriver.ChromeOptions() # for mac - chrome browser
-#options = webdriver.EdgeOptions()
+#options = webdriver.ChromeOptions() # for mac - chrome browser
+options = webdriver.EdgeOptions()
 options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--enable-javascript')
+
+#options.add_argument('--disable-gpu')
+#options.add_argument('--ignore-certificate-errors')
+options.add_argument('--allow-insecure-localhost')
+#options.add_argument('--ignore-ssl-errors')
 
 # Directory where you want to save the images
 save_directory = "auction_images"
@@ -26,7 +31,7 @@ image_counter = 1
 
 # Main scraping loop for multiple pages
 current_page = 1
-total_pages = 1  # Adjust based on the number of pages
+total_pages = 3  # Adjust based on the number of pages
 url_template = 'https://www.storagetreasures.com/auctions/tx/dallas/?page={}'
 
 # Dictionary to store image details: auction number -> list of image dictionaries
@@ -36,7 +41,7 @@ results = {}
 downloaded_images = set()
 
 # Initialize the WebDriver
-driver = webdriver.Edge(options=options)
+driver = webdriver.Edge(options=options) # for mac - webdriver.Chrome(options=options)
 web_loc = 'https://www.storagetreasures.com/auctions/tx/dallas/'
 driver.get(web_loc)
 
