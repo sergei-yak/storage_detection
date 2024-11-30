@@ -12,6 +12,12 @@ from langchain.memory import ConversationBufferMemory
 from langchain_community.agent_toolkits import JsonToolkit, create_json_agent
 from langchain_community.tools.json.tool import JsonSpec
 
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import pandas as pd
+import numpy as np
+
 import time
 from requests.exceptions import ConnectTimeout, RequestException
 #from openai.error import APIConnectionError
@@ -134,8 +140,133 @@ def handle_agent_response(agent_response, query):
     if not response_pairs:
         send_to_telegram(agent_response[1], [])  # Send the agent's response as a message if no images found
 
+##################################################################
+def dashboard_plot(json_data):
+    # Extract classes, scores, and occurrences
+    class_scores = {}
+    class_occurrences = {}
+
+    for image_data in json_data.values():
+        for obj, scores in image_data["predicted_data"].items():
+            if obj not in class_scores:
+                class_scores[obj] = []
+                class_occurrences[obj] = 0
+            class_scores[obj].extend(scores)
+            class_occurrences[obj] += len(scores)
+
+    # Prepare data for scores and occurrences bar plots
+    classes = list(class_scores.keys())
+    scores = [round(np.mean(scores), 2) for scores in class_scores.values()]  # Average confidence score for each class
+    occurrences = list(class_occurrences.values())  # Total occurrences of each class
+
+    # Create DataFrames for sorted plotting
+    df_scores = pd.DataFrame({"classes": classes, "scores": scores}).sort_values("scores", ascending=False)
+    df_occurrences = pd.DataFrame({"classes": classes, "occurrences": occurrences}).sort_values("occurrences", ascending=False)
+
+    # Create subplots with 4 rows and 1 column
+    fig = make_subplots(
+        rows=4, cols=1,
+        subplot_titles=(
+            "Confidence Scores (average per class)",
+            "Class Occurrences",
+            "Heatmap of Confidence Scores Across Images and Objects",
+            "Box Plot of Confidence Scores for Each Object Type"
+        )
+    )
+
+    # Bar plot for scores in the first row
+    fig.add_trace(
+        go.Bar(
+            x=df_scores["classes"],
+            y=df_scores["scores"],
+            text=df_scores["scores"],
+            textposition="outside",
+            name="Scores"
+        ),
+        row=1, col=1
+    )
+
+    # Bar plot for occurrences in the second row
+    fig.add_trace(
+        go.Bar(
+            x=df_occurrences["classes"],
+            y=df_occurrences["occurrences"],
+            text=df_occurrences["occurrences"],
+            textposition="outside",
+            name="Occurrences"
+        ),
+        row=2, col=1
+    )
+
+    # Prepare data for the heatmap (confidence scores across images and objects)
+    object_types = sorted(class_scores.keys())
+    image_names = list(json_data.keys())
+    confidence_matrix = []
+
+    for image_name in image_names:
+        row = []
+        for obj in object_types:
+            scores = json_data[image_name]["predicted_data"].get(obj, [])
+            avg_score = np.mean(scores) if scores else 0  # Use average score, or 0 if object not present
+            row.append(avg_score)
+        confidence_matrix.append(row)
+
+    # Heatmap for confidence scores in the third row
+    fig.add_trace(
+        go.Heatmap(
+            z=confidence_matrix,
+            x=object_types,
+            y=image_names,
+            colorscale='Viridis',
+            colorbar=dict(title="Confidence Score"),
+            name="Confidence Heatmap"
+        ),
+        row=3, col=1
+    )
+
+    # Prepare data for the box plot of confidence scores for each object type
+    box_plot_data = {obj: scores for obj, scores in class_scores.items()}
+
+    # Box plot for confidence scores in the fourth row
+    for obj, scores in box_plot_data.items():
+        fig.add_trace(
+            go.Box(
+                y=scores,
+                name=obj,
+                boxmean=True,
+                boxpoints='all',  # Show all points for better insights
+            ),
+            row=4, col=1
+        )
+
+    # Update layout for the entire figure
+    fig.update_layout(
+        title="Object Detection Analysis",
+        showlegend=False,
+        height=1800  # Adjust height for better spacing
+    )
+    fig.update_xaxes(title_text="Objects", row=1, col=1)
+    fig.update_yaxes(title_text="Confidence Level", row=1, col=1)
+    fig.update_xaxes(title_text="Objects", row=2, col=1)
+    fig.update_yaxes(title_text="Occurrences", row=2, col=1)
+    fig.update_xaxes(title_text="Object Type", row=3, col=1)
+    fig.update_yaxes(title_text="Image Name", row=3, col=1)
+    fig.update_xaxes(title_text="Object Type", row=4, col=1)
+    fig.update_yaxes(title_text="Confidence Score", row=4, col=1)
+
+    # Save plot as an image
+    fig.write_image("dashboard.png", format="png", width=1600, height=2000, scale=2)
+
+    return "dashboard.png"
+##################################################################
+
 def langchain_response(json_file, query):
-    if len(query.split()) > 1:
+    if query == "show dashboard":
+        with open('predicted_items.json', 'r') as file:
+            json_data = json.load(file)
+        dashboard_plot(json_data)
+        return send_to_telegram('Below is the dashboard based on objects data:', ["dashboard.png"])
+    elif len(query.split()) > 1:
         # Step 1: Open the file and load the JSON data
         with open(json_file, 'r') as file:
             json_data = json.load(file)
@@ -152,7 +283,7 @@ def langchain_response(json_file, query):
                     "content": f"{query}, use this data to answer - {json_string}",
                 }
             ],
-            model="gpt-3.5-turbo",
+            model="gpt-3.5-turbo",#"gpt-3.5-turbo", #"gpt-4-0613"
         )
         return send_to_telegram(chat_completion.choices[0].message.content, [])
     else:
