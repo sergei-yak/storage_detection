@@ -5,7 +5,7 @@ from PIL import Image
 import json
 
 # Define the YOLO model path and directories
-MODEL_PATH = "yolov8s-world.pt"
+MODEL_PATH = "yolo11n.pt" #"yolov8s-world.pt"
 INPUT_DIR = 'auction_images'
 OUTPUT_DIR = 'auction_images/predictions'
 
