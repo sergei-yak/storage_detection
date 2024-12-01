@@ -383,8 +383,9 @@ while True:
             langchain_response("predicted_items.json", message_text) #if meassage_text is more than one word, it will use OpenAI API, else it will use agent_executor
 
             # send this message when finished object detection
-            if len(message_text) <= 1:
-                msg = f"I've finished checking storage units for {str(message_text).upper()}. \nIf you want to look for another specific item in the storage units, just send the name of the item to this channel."
+            words = message_text.split()
+            if len(words) <= 1:
+                msg = f"I've finished checking storage units for {str(message_text).upper()}.\nIf you want to look for another specific item in the storage units, just send the name of the item to this chat.\nIf you want to see visual summary statistics for detected items, just type 'show dashboard'.\nIf you want to see the list of items found or any other questions related to items in storage units, feel free to type anything."
                 url_tel = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={msg}"
                 requests.get(url_tel).json()
             last_message_id = message_id
