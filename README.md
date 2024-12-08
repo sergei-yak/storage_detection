@@ -9,7 +9,11 @@ Project to find objects in online auctions images and use chat to get informatio
 
 
 # 2. Neural network model:
-    # Run object recognition on images and save recognazed objects with json data
+    # Run object recognition on images and save recognazed objects with json data![Screenshot 2024-11-30 152300](https://github.com/user-attachments/assets/80121ec9-3c21-45c2-be17-0e6621ca76b5)
+![Screenshot 2024-11-30 134702](https://github.com/user-attachments/assets/4edea82f-5224-4bb7-b345-9732929e6dbe)
+![Screenshot 2024-11-30 201030](https://github.com/user-attachments/assets/886d43e7-4bb7-42be-8732-7c73c4f803c0)![Screenshot 2024-12-08 134716](https://github.com/user-attachments/assets/ece065f9-7d1f-4afd-bdc0-59b3543d5a51)
+
+
 
 # 3. Chat through Telegram API:
     # Run ai agent with a tool (for future development) and run telegram bot
