@@ -3,6 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+
 import os
 import requests
 import time
@@ -11,7 +13,7 @@ import json
 # Setup Edge WebDriver options
 #options = webdriver.ChromeOptions() # for mac - chrome browser
 options = webdriver.EdgeOptions()
-options.add_argument('--headless')
+#options.add_argument('--headless')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--enable-javascript')
@@ -31,7 +33,7 @@ image_counter = 1
 
 # Main scraping loop for multiple pages
 current_page = 1
-total_pages = 3  # Adjust based on the number of pages
+total_pages = 4  # Adjust based on the number of pages
 url_template = 'https://www.storagetreasures.com/auctions/tx/dallas/?page={}'
 
 # Dictionary to store image details: auction number -> list of image dictionaries
@@ -122,7 +124,7 @@ def get_auction_links(url):
     return auction_data
 
 # Function to navigate to a specific page
-def navigate_to_page(page_number):
+def navigate_to_page_1(page_number):
     try:
         page_element = driver.find_element(By.ID, f'pagination-page-{page_number}')
         page_element.click()
@@ -131,12 +133,37 @@ def navigate_to_page(page_number):
     except Exception as e:
         print(f"Error navigating to page {page_number}: {e}")
 
+def navigate_to_page(page_number):
+    try:
+        # Wait for the pagination element to be clickable
+        page_element = WebDriverWait(driver, 20).until(
+            EC.element_to_be_clickable((By.ID, f'pagination-page-{page_number}'))
+        )
+        
+        # Scroll to the pagination element to ensure it's visible
+        driver.execute_script("arguments[0].scrollIntoView(true);", page_element)
+        
+        # Click the pagination element
+        page_element.click()
+        
+        # Optionally wait for the page to update by checking the "active" class
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, f"li.page-item.active#pagination-page-{page_number}"))
+        )
+        print(f"Successfully navigated to page {page_number}")
+    except TimeoutException:
+        print(f"Timeout: Unable to locate or click pagination element for page {page_number}")
+    except Exception as e:
+        print(f"Error navigating to page {page_number}: {e}")
+
+
+
 # Function to save results to a JSON file
 def save_results_to_json(results, filename="auction_results.json"):
     with open(filename, "w") as json_file:
         json.dump(results, json_file, indent=4)
     print(f"Results saved to {filename}")
-
+""" 
 while current_page <= total_pages:
     url = url_template.format(current_page)
     print(f"Scraping data from page {current_page}")
@@ -153,6 +180,37 @@ while current_page <= total_pages:
         current_page += 1
         navigate_to_page(current_page)  # Navigate to the next page
         time.sleep(2)  # Wait for the page to load completely
+    else:
+        print("Reached the last page.")
+        break
+
+# Close the WebDriver
+driver.quit()
+"""
+# Loop through all pages
+while current_page <= total_pages:
+    print(f"Scraping data from page {current_page}")
+
+    # Get the list of auctions for the current page
+    auction_data = get_auction_links(driver.current_url)
+
+    # Process each auction on the current page
+    for auction in auction_data:
+        link = auction['link']
+        auction_id = auction['auction_id']
+        print(f"Processing auction link: {link} (ID: {auction_id})")
+        image_counter = scrape_auction_images(link, auction_id, auction_counter, image_counter)
+        auction_counter += 1
+
+    # Navigate to the next page if there are more pages
+    if current_page < total_pages:
+        current_page += 1
+        try:
+            navigate_to_page(current_page)  # Navigate to the next page
+            time.sleep(2)  # Give the page time to load
+        except TimeoutException:
+            print(f"Failed to navigate to page {current_page}. Stopping pagination.")
+            break
     else:
         print("Reached the last page.")
         break
