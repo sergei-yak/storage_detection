@@ -12,9 +12,10 @@ Project to find objects in online auctions images and use chat to get informatio
         download images
         add metadata to dictionary
 
-    3. Navigate to the next page with next auctions and do steps 1-2
+3. Navigate to the next page with next auctions and do steps 1-2
 ![Screenshot 2024-12-08 205849](https://github.com/user-attachments/assets/775cbfc5-4c3c-422b-aad0-8939d51e007d)
-    4. Save metadata (image names, image urls and IDs) into JSON
+
+4. Save metadata (image names, image urls and IDs) into JSON
 ![Screenshot 2024-12-08 210133](https://github.com/user-attachments/assets/47874c85-0615-4658-906c-a021acea6297)
 
 ![Screenshot 2024-12-08 205325](https://github.com/user-attachments/assets/cf334bdc-7361-48da-9313-29727e2561ba)
