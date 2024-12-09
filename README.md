@@ -4,13 +4,12 @@ Project to find objects in online auctions images and use chat to get informatio
 
 
 # 1. Web scraping:
-    1. Access website and get all auction links and auction IDs from the first page
+1. Access website and get all auction links and auction IDs from the first page
+![Screenshot 2024-12-08 211630](https://github.com/user-attachments/assets/3b235cf0-adbf-4974-b585-219ddec82c4c)
 
-    2. For all auctions:
-        open auction link 
-        find all images
-        download images
-        add metadata to dictionary
+2. For all auctions:
+   (open auction link; find all images; download images; add metadata to dictionary)
+![Screenshot 2024-12-08 211815](https://github.com/user-attachments/assets/da823b3a-70fe-4409-9f76-3ef5ba2d8a01)
 
 3. Navigate to the next page with next auctions and do steps 1-2
 ![Screenshot 2024-12-08 205849](https://github.com/user-attachments/assets/775cbfc5-4c3c-422b-aad0-8939d51e007d)
