@@ -33,7 +33,7 @@ image_counter = 1
 
 # Main scraping loop for multiple pages
 current_page = 1
-total_pages = 4  # Adjust based on the number of pages
+total_pages = 3  # Adjust based on the number of pages
 url_template = 'https://www.storagetreasures.com/auctions/tx/dallas/?page={}'
 
 # Dictionary to store image details: auction number -> list of image dictionaries
@@ -189,10 +189,12 @@ driver.quit()
 """
 # Loop through all pages
 while current_page <= total_pages:
+    url = url_template.format(current_page)
     print(f"Scraping data from page {current_page}")
 
     # Get the list of auctions for the current page
-    auction_data = get_auction_links(driver.current_url)
+    auction_data = get_auction_links(url) # gets auction data from dallas
+    #auction_data = get_auction_links(driver.current_url) # bug - gets auctions from other states
 
     # Process each auction on the current page
     for auction in auction_data:
