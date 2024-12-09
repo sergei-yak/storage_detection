@@ -18,7 +18,7 @@ Project to find objects in online auctions images and use chat to get informatio
 4. Save metadata (image names, image urls and IDs) into JSON
 ![Screenshot 2024-12-08 210133](https://github.com/user-attachments/assets/47874c85-0615-4658-906c-a021acea6297)
 
-![Screenshot 2024-12-08 205325](https://github.com/user-attachments/assets/cf334bdc-7361-48da-9313-29727e2561ba)
+![Screenshot 2024-12-08 211157](https://github.com/user-attachments/assets/6d7243b7-e2a9-421c-b259-f616be1dbd7a)
 ![Screenshot 2024-12-01 201850](https://github.com/user-attachments/assets/43ae3902-b420-4c22-b85b-0516c8994091)
 
 
